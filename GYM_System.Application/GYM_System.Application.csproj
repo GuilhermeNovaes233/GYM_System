@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GYM_System.Domain\GYM_System.Domain.csproj" />
+    <ProjectReference Include="..\GYM_System.Infra\GYM_System.Infra.csproj" />
+    <ProjectReference Include="..\GYM_System.Services\GYM_System.Services.csproj" />
+  </ItemGroup>
+
+</Project>
