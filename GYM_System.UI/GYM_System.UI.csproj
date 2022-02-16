@@ -20,6 +20,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\GYM_System.Application\GYM_System.Application.csproj" />
-	  <ProjectReference Include="..\GYM_System.Infra\GYM_System.Infra.csproj" />
+	  <ProjectReference Include="..\GYM_System.CrossCutting.Ioc\GYM_System.CrossCutting.Ioc.csproj" />
 	</ItemGroup>
 </Project>

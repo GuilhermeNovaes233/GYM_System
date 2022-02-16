@@ -5,8 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GYM_System.Application\GYM_System.Application.csproj" />
+    <ProjectReference Include="..\GYM_System.Infra\GYM_System.Infra.csproj" />
     <ProjectReference Include="..\GYM_System.Services\GYM_System.Services.csproj" />
-    <ProjectReference Include="..\GYM_System.UI\GYM_System.UI.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,4 @@
+using GYM_System.CrossCutting.Ioc;
 using GYM_System.Infra.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,8 @@ namespace GYM_System.UI
 
             services.AddDbContext<DataContext>(options =>
                   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.RegisterSevices();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
