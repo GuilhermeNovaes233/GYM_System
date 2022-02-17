@@ -1,8 +1,8 @@
-﻿using GYM_System.Application.Interfaces;
+﻿using AutoMapper;
+using GYM_System.Application.Interfaces;
 using GYM_System.Application.ViewModels;
 using GYM_System.Domain.Interfaces.Repositories;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GYM_System.Application.Services
@@ -10,19 +10,21 @@ namespace GYM_System.Application.Services
     public class TeacherApplicationService : ITeacherApplicationService
     {
         private readonly ITeacherRepository _teacherRepository;
-        
-        public TeacherApplicationService(ITeacherRepository teacherRepository)
+        private readonly IMapper _mapper;
+
+        public TeacherApplicationService(ITeacherRepository teacherRepository, IMapper mapper)
         {
             _teacherRepository = teacherRepository;
+            _mapper = mapper;
         }
 
         public async Task<TeacherViewModel> GetTeacherById(string id)
         {
-            var result = await _teacherRepository.GetTeacherById(new Guid(id));
+            var model = await _teacherRepository.GetByIdAsync(new Guid(id));
 
-            //TODO - Adicionar mapper
+            var vm = _mapper.Map<TeacherViewModel>(model);
 
-            throw new NotImplementedException();
+            return vm;
         }
     }
 }

@@ -1,15 +1,12 @@
 ﻿using GYM_System.Domain.Entities;
 using GYM_System.Domain.Interfaces.Repositories;
-using System;
-using System.Threading.Tasks;
+using GYM_System.Infra.Data;
 
 namespace GYM_System.Infra.Repositories
 {
-    public class TeacherRepository : ITeacherRepository
+    public class TeacherRepository : RepositoryBase<Teacher>, ITeacherRepository
     {
-        public Task<Teacher> GetTeacherById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+        public TeacherRepository(DataContext context) : base(context) {}
+
     }
 }

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GYM_System.Domain\GYM_System.Domain.csproj" />
     <ProjectReference Include="..\GYM_System.Infra\GYM_System.Infra.csproj" />
     <ProjectReference Include="..\GYM_System.Services\GYM_System.Services.csproj" />
