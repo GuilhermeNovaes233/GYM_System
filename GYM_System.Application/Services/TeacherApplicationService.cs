@@ -3,6 +3,7 @@ using GYM_System.Application.Interfaces;
 using GYM_System.Application.ViewModels;
 using GYM_System.Domain.Interfaces.Repositories;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GYM_System.Application.Services
@@ -18,13 +19,33 @@ namespace GYM_System.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<TeacherViewModel> GetTeacherById(string id)
+        public Task CreateTeacherAsync(TeacherViewModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<TeacherViewModel>> GetAllTeachersAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<TeacherViewModel> GetTeacherByIdAsync(string id)
         {
             var model = await _teacherRepository.GetByIdAsync(new Guid(id));
 
             var vm = _mapper.Map<TeacherViewModel>(model);
 
             return vm;
+        }
+
+        public Task UpdateTeacherAsync(TeacherViewModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteTeacherAsync(string id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
