@@ -1,6 +1,7 @@
 ﻿using GYM_System.Application.Interfaces;
 using GYM_System.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace GYM_System.UI.Controllers
@@ -22,7 +23,7 @@ namespace GYM_System.UI.Controllers
         /// <returns>Return to Teacher</returns>
         [HttpGet]
         [Route("getById")]
-        public async Task<IActionResult> GetById([FromQuery] string teacherId)
+        public async Task<IActionResult> GetById([FromQuery] Guid teacherId)
             => Ok(await _teacherApplicationService.GetTeacherByIdAsync(teacherId));
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace GYM_System.UI.Controllers
         /// </summary>
         /// <returns>Return a Teacher</returns>
         [HttpDelete]
-        public async Task<IActionResult> DeleteTeacher([FromBody] string teacherId)
+        public async Task<IActionResult> DeleteTeacher([FromBody] Guid teacherId)
         {
             await _teacherApplicationService.DeleteTeacherAsync(teacherId);
 

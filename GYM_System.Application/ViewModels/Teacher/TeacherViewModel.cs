@@ -7,6 +7,7 @@ namespace GYM_System.Application.ViewModels
 {
     public class TeacherViewModel
     {
+        public Guid Id { get; set; }
         public string Name { get; private set; }
         public string Email { get; private set; }
         public string ZipCode { get; private set; }
